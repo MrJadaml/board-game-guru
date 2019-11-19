@@ -1,10 +1,11 @@
 import React from 'react'
+import { map } from 'lodash'
 import Card from '../card/'
 
-export default function List({ resource }) {
+export default function List({ collection }) {
   return (
     <div>
-      {resource.map(item => <Card {...item} key={item.slug}/> )}
+      {map(collection, item => <Card {...item} key={item.slug}/> )}
     </div>
   )
 }

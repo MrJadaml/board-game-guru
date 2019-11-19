@@ -7,6 +7,6 @@ const allGames = gamesGenerator(7)
 
 export default () => (
   <App>
-    <List resource={allGames} />
+    <List collection={allGames} />
   </App>
 )
