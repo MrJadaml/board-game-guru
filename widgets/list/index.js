@@ -1,11 +1,17 @@
 import React from 'react'
 import { map } from 'lodash'
-import Card from '../card/'
+import typeMap from '../component-type-map';
 
-export default function List({ collection }) {
+export const List = ({ collection, componentType }) => {
   return (
     <div>
-      {map(collection, item => <Card {...item} key={item.slug}/> )}
+      {map(collection, itemProps => {
+        return React.createElement(
+          typeMap[componentType],
+          itemProps,
+          null
+        )
+      })}
     </div>
   )
 }
