@@ -1,5 +1,5 @@
 import App from '../components/app'
-import List from '../widgets/list/'
+import { List } from '../widgets/list/'
 
 import { gamesGenerator } from '../db/'
 

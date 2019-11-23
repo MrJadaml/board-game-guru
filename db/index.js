@@ -14,12 +14,41 @@ module.exports.gamesGenerator = (count, titleOverride, dateOverride) => {
   return games;
 }
 
-module.exports.partsGenerator = (count, x, y, z) => {
-  let parts = [];
-
+module.exports.partsGenerator = () => {
   parts = {
     boards: {
       title: 'Boards',
+      gameBoards: [
+        {
+          title: 'Game Boards',
+          items: [
+            {
+              title: 'Main board',
+              images: ['/images/game-board-tm-main.jpeg'],
+            },
+            {
+              title: 'Elysium board',
+              images: ['/images/game-board-tm-elysium.jpeg'],
+            },
+            {
+              title: 'Hellas',
+              images: [],
+            },
+          ],
+        },
+      ],
+      playerBoards: [
+        {
+          title: 'Player Boards',
+          items: [],
+        }
+      ],
+      sideBoards: [
+        {
+          title: 'Side Boards',
+          items: [],
+        }
+      ],
     },
     cards: {
       title: 'Cards',
@@ -34,17 +63,6 @@ module.exports.partsGenerator = (count, x, y, z) => {
       title: 'Instructions',
     },
   };
-
-  // const baseTitle = titleOverride || 'Game Name';
-  // let timestamp = dateOverride || 4200000000000;
-
-  // for (let id = count; id > 0; id--) {
-    // const title = `${baseTitle} ${id}`;
-    // const slug = title.replace(/\s/g, '-');
-    // timestamp = timestamp + id;
-
-    // parts.push({ id, slug, title, timestamp });
-  // }
 
   return parts;
 }
