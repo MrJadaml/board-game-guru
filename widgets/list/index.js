@@ -6,10 +6,10 @@ import PropTypes from 'prop-types';
 export const List = ({ collection, componentType }) => {
   return (
     <div>
-      {map(collection, itemProps => {
+      {map(collection, (itemProps, idx) => {
         return React.createElement(
           typeMap[componentType],
-          itemProps,
+          { idx, ...itemProps },
           null
         )
       })}

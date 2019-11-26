@@ -1,3 +1,21 @@
 .card {
-  color: purple;
+  color: white;
+  padding: 10px 0;
+
+  & span {
+    color: white;
+  }
 }
+
+.color-0 {
+  background-color: #4c36a3;
+}
+
+.color-1 {
+  background-color: #b82c83;
+}
+
+.color-2 {
+  background-color: #239387;
+}
+
