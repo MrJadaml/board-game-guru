@@ -1,18 +1,18 @@
 import { useRouter } from 'next/router'
 import { map } from 'lodash'
-import { Boards } from '../../components/boards/'
-import { List } from '../../widgets/list'
-import { partsGenerator } from '../../db/'
+import { Boards } from '../../../components/boards/'
+import { List } from '../../../widgets/list'
+import { partsGenerator } from '../../../db/'
 
 const parts = partsGenerator();
 
 const Game = () => {
   const router = useRouter()
-  const { slug } = router.query
+  const { game_slug: gameSlug } = router.query
 
   const getUpdatedParts = () => {
     const setHref = map(parts, part => {
-      const href = `/game/${slug}/${part.title}`
+      const href = `/game/${gameSlug}/${part.title}`
       const nextPart = { ...part, href }
 
       return nextPart;
@@ -25,7 +25,7 @@ const Game = () => {
 
   return (
     <>
-      <h1>{slug}</h1>
+      <h1>{gameSlug}</h1>
 
       <h2>Components</h2>
 
@@ -38,4 +38,3 @@ const Game = () => {
 }
 
 export default Game
-      // <Boards allBoards={parts.boards} />

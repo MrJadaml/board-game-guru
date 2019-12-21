@@ -69,3 +69,10 @@ module.exports.partsGenerator = () => {
 
 const generator = foo => {
 }
+
+module.exports.categoryItemsGenerator = () => {
+  return {
+    title: 'blah',
+    images: '#',
+  }
+}
